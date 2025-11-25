@@ -2,8 +2,9 @@
 import React, { useContext } from 'react';
 import Header from './components/Header.tsx';
 import PhotoGallery from './components/PhotoGallery.tsx';
+import Travel from './components/Travel.tsx';
 import Footer from './components/Footer.tsx';
-import { CalendarIcon, LocationIcon, ClockIcon, TrulloIcon, PlaneIcon, BedIcon, SparklesIcon, FloralDivider, DressCodeIcon, GiftIcon } from './components/icons.tsx';
+import { CalendarIcon, LocationIcon, PlaneIcon, BedIcon, SparklesIcon } from './components/icons.tsx';
 import AccordionItem from './components/AccordionItem.tsx';
 import { LanguageContext } from './contexts/LanguageContext.tsx';
 import { translations } from './translations.ts';
@@ -11,104 +12,162 @@ import { translations } from './translations.ts';
 const App: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = translations[language];
-
-  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScd_gSrDFdsFf-S_I-k8bwwpBqDqS9z0_D8g/viewform?embedded=true"; // IMPORTANT: Replace with your actual Google Form URL
-
+  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScHfE-Cfy_JnBhV4SS6RGH9MCDRDvJYXwGwolb37kEMHSU4eg/viewform?embedded=true";
   return (
     <div className="bg-ivory text-green font-sans antialiased">
       <Header />
       <main>
-        {/* Hero Section */}
-        <section id="home" className="relative h-screen flex items-center justify-center text-center text-white">
-          <div className="absolute inset-0 bg-orange/30 z-10"></div>
-          {/* Image of a trullo in Puglia, Italy */}
-          <img src="https://images.unsplash.com/photo-1628926957778-10696ea355ab?q=80&w=1920&auto=format&fit=crop" alt="A sunny view of a trullo in Puglia, Italy" className="absolute inset-0 w-full h-full object-cover"/>
-          <div className="relative z-20 p-4">
-            <h1 className="font-script text-6xl md:text-9xl mb-2">Elisabetta & Ivan</h1>
-            <p className="text-xl md:text-2xl font-light tracking-wider uppercase">{t.heroSubheading}</p>
-            <p className="mt-4 text-lg md:text-xl font-sans">{t.heroDate}</p>
-          </div>
-        </section>
+        <section
+            id="home"
+            className="relative h-screen flex flex-col items-center justify-start text-center text-white bg-[#f7f0e8] overflow-hidden"
+            >
+            {/* slight tint overlay */}
+            <div className="absolute inset-0 bg-terracotta/80 z-10"></div>
+
+        <img
+    src="./assets/trullo4.png"
+    className="
+        relative z-20
+        h-auto
+        max-h-[80vh]
+        w-full
+        max-w-[700px]
+        object-contain
+        opacity-80
+        md:translate-x-12
+        mx-auto
+        mb-6
+        transition-all duration-300
+    "
+/>
+            {/* TEXT */}
+            <div className="relative z-20 p-4">
+                <h1 className="font-script text-6xl md:text-9xl mb-2">Elisabetta & Ivan</h1>
+                <p className="text-xl md:text-2xl font-medium tracking-wider uppercase">
+                </p>
+                <p className="mt-4 text-xl md:text-2xl font-sans">{t.heroDate}</p>
+            </div>
+            </section>
+
 
         {/* Introduction Section */}
-        <section id="story" className="py-20 px-6 md:px-12">
-           <div className="max-w-6xl mx-auto">
-              <div className="flex justify-center mb-16">
-                  <FloralDivider className="w-48 text-green" />
-              </div>
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                  <div className="text-center md:text-left order-2 md:order-1">
-                      <h2 className="font-sans font-bold text-4xl md:text-5xl text-orange mb-6">{t.storyTitle}</h2>
-                      <p className="text-lg leading-relaxed text-green/80 mb-4">
-                          {t.storyPara1}
-                      </p>
-                      <p className="text-lg leading-relaxed text-green/80">
-                          {t.storyPara2}
-                      </p>
-                  </div>
-                  <div className="order-1 md:order-2">
-                      <img src="https://images.unsplash.com/photo-1569426853889-b2de44118f6f?q=80&w=800&auto=format&fit=crop" alt="Elisabetta and Ivan smiling together" className="rounded-lg shadow-lg w-full h-auto object-cover aspect-[4/5]" />
-                  </div>
-              </div>
-          </div>
-        </section>
+       <section
+        id="story"
+        className="relative py-28 px-6 md:px-12 overflow-hidden"
+        >
+        {/* Background Image */}
+        <div
+            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            style={{ backgroundImage: "url('./assets/acquerello.png')" }}
+        ></div>
 
-        {/* Details Section */}
-        <section id="details" className="bg-ivory py-20 px-6 md:px-12">
-            <div className="max-w-5xl mx-auto text-center">
-                <div className="flex justify-center mb-16">
-                    <FloralDivider className="w-48 text-green" />
-                </div>
-                <h2 className="font-sans font-bold text-4xl md:text-5xl text-orange mb-12 flex items-center justify-center gap-4">
-                  <TrulloIcon className="w-10 h-10" />
-                  {t.detailsTitle}
-                  <TrulloIcon className="w-10 h-10 transform -scale-x-100" />
+        {/* Soft overlay (controls readability + color mood) */}
+        <div className="absolute inset-0 bg-ivory/20"></div>
+
+        {/* Content */}
+        <div className="relative max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+
+            {/* Text */}
+            <div className="text-center md:text-left order-2 md:order-1">
+                <h2 className="font-titles font-bold text-4xl md:text-5xl text-orange mb-6">
+                {t.storyTitle}
                 </h2>
-                <div className="grid md:grid-cols-3 gap-12 text-green">
-                    <div className="flex flex-col items-center">
-                        <CalendarIcon className="w-12 h-12 mb-4 text-orange" />
-                        <h3 className="font-sans font-bold text-2xl mb-2">{t.detailsDateTitle}</h3>
-                        <p className="text-lg">{t.detailsDateValue}</p>
-                    </div>
-                    <div className="flex flex-col items-center">
-                        <ClockIcon className="w-12 h-12 mb-4 text-orange" />
-                        <h3 className="font-sans font-bold text-2xl mb-2">{t.detailsTimeTitle}</h3>
-                        <p className="text-lg">{t.detailsTimeValue1}</p>
-                        <p className="text-lg">{t.detailsTimeValue2}</p>
-                    </div>
-                    <div className="flex flex-col items-center">
-                        <LocationIcon className="w-12 h-12 mb-4 text-orange" />
-                        <h3 className="font-sans font-bold text-2xl mb-2">{t.detailsLocationTitle}</h3>
-                        <p className="text-lg">Masseria del Leccio</p>
-                        <p className="text-lg">Contrada Leccio, Puglia, IT 72015</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        {/* Dress Code Section */}
-        <section id="dress-code" className="bg-ivory py-20 px-6 md:px-12">
-            <div className="max-w-4xl mx-auto text-center">
-                <div className="flex justify-center mb-16">
-                    <FloralDivider className="w-48 text-green" />
-                </div>
-                <h2 className="font-sans font-bold text-4xl md:text-5xl text-orange mb-12 flex items-center justify-center gap-4">
-                    <DressCodeIcon className="w-10 h-10" />
-                    {t.dressCodeTitle}
-                </h2>
+
+                <p className="text-lg leading-relaxed text-green/80 mb-4">
+                {t.storyPara1}
+                </p>
                 <p className="text-lg leading-relaxed text-green/80">
-                    {t.dressCodePara}
+                {t.storyPara2}
                 </p>
             </div>
+
+            {/* Image */}
+            <div className="order-1 md:order-2">
+                <img
+                src="./assets/hollywood.jpg"
+                alt="Elisabetta and Ivan smiling together"
+                className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-[4/5]"
+                />
+            </div>
+
+            </div>
+        </div>
         </section>
 
-        {/* Travel & Stay Section */}
-        <section id="travel" className="bg-ivory py-20 px-6 md:px-12">
-            <div className="max-w-4xl mx-auto text-center">
-                <div className="flex justify-center mb-16">
-                    <FloralDivider className="w-48 text-green" />
+        <section id="details" className="bg-ivory pt-20 px-6 md:px-12">
+             <div className="max-w-6xl mx-auto text-center">
+
+        {/* DETAILS TITLE */}
+        <h2 className="font-titles font-bold text-4xl md:text-5xl text-orange mb-20 flex items-center justify-center gap-4">
+            {t.detailsTitle}
+        </h2>
+
+        {/* DETAILS GRID */}
+        <div className="grid md:grid-cols-3 gap-12 text-green mb-20">
+
+            {/* WHEN */}
+            <div className="relative flex flex-col justify-between items-center bg-[#fdf8f2] rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-2xl transition-shadow duration-300 h-64">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-rose-600 via-terracotta to-rose-600 rounded-full mt-3"></div>
+                <h3 className="font-sans font-semibold flex items-center gap-2 text-[clamp(0.875rem,2vw,1.25rem)]">
+                    <CalendarIcon className="w-5 h-5 text-terracotta" />
+                    {t.detailsWhenTitle}
+                </h3>
+                <p className="font-light text-[clamp(1rem,3vw,1.5rem)] pt-5"> {t.detailsWhenValue}</p>
+                <p className="text-green/80 mt-1">{t.detailsWhenValue1}</p>
+            </div>
+
+            {/* LOCATION */}
+            <div className="relative flex flex-col justify-between items-center bg-[#fdf8f2] rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-2xl transition-shadow duration-300 h-64">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-rose-600 via-terracotta to-rose-600 rounded-full mt-3"></div>
+                <h3 className="font-sans font-semibold flex items-center gap-2 text-[clamp(0.875rem,2vw,1.25rem)]">
+                    <LocationIcon className="w-5 h-5 text-terracotta" />
+                    {t.detailsLocationTitle}
+                </h3>
+                <p className="font-light text-[clamp(1rem,3vw,1.5rem)] pt-5"> {t.detailsLocationValue}</p>
+                <p className="text-green/80 text-[clamp(0.75rem,2.5vw,1rem)] mt-1">{t.detailsLocationValue1}</p>
+            </div>
+
+            {/* DRESS CODE */}
+            <div className="relative flex flex-col justify-between items-center bg-[#fdf8f2] rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-2xl transition-shadow duration-300 h-64">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-rose-600 via-terracotta to-rose-600 rounded-full mt-3"></div>
+                <h3 className="font-sans font-semibold flex items-center gap-2 text-[clamp(0.875rem,2vw,1.25rem)]">
+                    <SparklesIcon className="w-5 h-5 text-terracotta" />
+                    {t.dressCodeTitle}
+                </h3>
+                <p className="font-light text-[clamp(1rem,3vw,1.5rem)] pt-5">{t.dressCodeValue}</p>
+                <p className="text-green/80 text-[clamp(0.75rem,2.5vw,1rem)] mt-1">{t.dressCodeValue1}</p>
+            </div>
+        </div>
+
+                {/* MAP */}
+                <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-lg mb-28">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6022.80181012093!2d17.194303!3d40.822174!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1347b17e717c4a13%3A0x2539274537f2b8e4!2sMasseria%20Papaperta!5e1!3m2!1sit!2sde!4v1763582274450!5m2!1sit!2sde"
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
                 </div>
-                <h2 className="font-sans font-bold text-4xl md:text-5xl text-orange mb-12 flex items-center justify-center gap-4">
+            </div>
+            </section>
+
+    {/* Travel & Stay Section */}
+        <section id="travel" className="bg-ivory px-6 md:px-12">
+            <div className="max-w-4xl mx-auto text-center">
+                <div className="flex items-center justify-center w-full my-16">
+                    <div className="flex-1 border-t border-terracotta/40"></div>
+
+                    <img
+                        src="./assets/ficod.png"
+                        className="w-32 h-auto mx-6"
+                        alt="Icon"
+                    />
+
+                    <div className="flex-1 border-t border-terracotta/40"></div>
+                    </div>
+                <h2 className="font-titles font-bold text-4xl md:text-5xl text-orange mb-12 flex items-center justify-center gap-4">
                     {t.travelTitle}
                 </h2>
                 <div className="space-y-4 text-left text-green">
@@ -138,29 +197,45 @@ const App: React.FC = () => {
                         </div>
                     </AccordionItem>
                 </div>
+               <Travel />
             </div>
         </section>
 
 
         {/* Photo Gallery Section */}
-        <section id="photos" className="py-20 px-6 md:px-12">
+        <section id="photos" className="px-6 md:px-12">
           <div className="max-w-6xl mx-auto text-center">
-            <div className="flex justify-center mb-16">
-                <FloralDivider className="w-48 text-green" />
-            </div>
-            <h2 className="font-sans font-bold text-4xl md:text-5xl text-orange mb-12">{t.photosTitle}</h2>
+                <div className="flex items-center justify-center w-full my-16">
+                    <div className="flex-1 border-t border-terracotta/40"></div>
+
+                    <img
+                        src="./assets/ficod.png"
+                        className="w-32 h-auto mx-6"
+                        alt="Icon"
+                    />
+
+                    <div className="flex-1 border-t border-terracotta/40"></div>
+                    </div>
+            <h2 className="font-titles font-bold text-4xl md:text-5xl text-orange mb-12">{t.photosTitle}</h2>
             <PhotoGallery />
           </div>
         </section>
         
         {/* Gift Section */}
-        <section id="gifts" className="bg-ivory py-20 px-6 md:px-12">
+        <section id="gifts" className="bg-ivory pt-20 px-6 md:px-12">
             <div className="max-w-4xl mx-auto text-center">
-                <div className="flex justify-center mb-16">
-                    <FloralDivider className="w-48 text-green" />
-                </div>
-                <h2 className="font-sans font-bold text-4xl md:text-5xl text-orange mb-12 flex items-center justify-center gap-4">
-                    <GiftIcon className="w-10 h-10" />
+                <div className="flex items-center justify-center w-full my-16">
+                    <div className="flex-1 border-t border-terracotta/40"></div>
+
+                    <img
+                        src="./assets/ficod.png"
+                        className="w-32 h-auto mx-6"
+                        alt="Icon"
+                    />
+
+                    <div className="flex-1 border-t border-terracotta/40"></div>
+                    </div>
+                <h2 className="font-titles font-bold text-4xl md:text-5xl text-orange mb-12 flex items-center justify-center gap-4">
                     {t.giftsTitle}
                 </h2>
                 <p className="text-lg leading-relaxed text-green/80 mb-4">
@@ -179,21 +254,26 @@ const App: React.FC = () => {
         </section>
 
         {/* RSVP Section */}
-        <section id="rsvp" className="bg-ivory py-20 px-6 md:px-12">
+        <section id="rsvp" className="bg-ivory pt-20 px-6 md:px-12">
             <div className="max-w-4xl mx-auto text-center">
-                 <div className="flex justify-center mb-16">
-                    <FloralDivider className="w-48 text-green" />
-                </div>
-                <h2 className="font-sans font-bold text-4xl md:text-5xl text-orange mb-4">{t.rsvpTitle}</h2>
-                <p className="text-lg mb-8 text-green/80">{t.rsvpPara}</p>
+                <div className="flex items-center justify-center w-full my-16">
+                    <div className="flex-1 border-t border-terracotta/40"></div>
+
+                    <img
+                        src="./assets/ficod.png"
+                        className="w-32 h-auto mx-6"
+                        alt="Icon"
+                    />
+
+                    <div className="flex-1 border-t border-terracotta/40"></div>
+                    </div>
+                <h2 className="font-titles font-bold text-4xl md:text-5xl text-orange mb-4">{t.rsvpTitle}</h2>
+                <p className="text-lg mb-8 pt-10 text-green/80">{t.rsvpPara}</p>
                 <div className="aspect-w-1 aspect-h-1 md:aspect-w-3 md:aspect-h-2">
                    <iframe
                       src={googleFormUrl}
                       width="100%"
                       height="900"
-                      frameBorder="0"
-                      marginHeight={0}
-                      marginWidth={0}
                       title="RSVP Form"
                       className="rounded-lg shadow-lg"
                       >

@@ -4,48 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elisabetta & Ivan's Wedding</title>
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- Add Babel Standalone for in-browser JSX/TSX transpilation -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&family=DM+Serif+Display:wght@300;400;700&display=swap" rel="stylesheet">
+
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              'orange': '#B34723',
-              'taupe': '#B8A186',
-              'green': '#2E3D34',
-              'ivory': '#F3E9DB',
-              'terracotta': '#C97B63',
-              'charcoal': '#3E3E3E',
+              orange: '#B34723',
+              taupe: '#B8A186',
+              green: '#2E3D34',
+              ivory: '#F3E9DB',
+              terracotta: '#C97B63',
+              charcoal: '#3E3E3E',
             },
             fontFamily: {
-              'script': ['"Great Vibes"', 'cursive'],
-              'sans': ['"Poppins"', 'sans-serif'],
+              script: ['"Great Vibes"', 'cursive'],
+              sans: ['"Poppins"', 'sans-serif'],
+              titles: ['"DM Serif Display"', 'sans-serif'],
             }
           }
         }
       }
     </script>
-    <!-- Use a standard ES Module CDN and a clean import map for React -->
-    <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18.2.0",
-    "react-dom": "https://esm.sh/react-dom@18.2.0",
-    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client"
-  }
-}
-</script>
   </head>
   <body class="bg-ivory">
     <div id="root"></div>
-    <!-- Tell Babel to transpile this module -->
-    <script type="text/babel" data-presets="typescript" data-type="module" src="./index.tsx"></script>
+    <!-- Vite injects the compiled script automatically -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
