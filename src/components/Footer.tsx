@@ -1,4 +1,3 @@
-
 import React, { useContext } from 'react';
 import { LanguageContext } from '../../contexts/LanguageContext.tsx';
 import { translations } from '../../translations.ts';
@@ -9,22 +8,26 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-green/80 text-ivory py-8">
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 relative flex justify-center items-center">
+
+        {/* Left image */}
         <img
           src="./assets/transparent_cacti.png"
-          className="h-[120px] w-auto object-contain absolute left-12 top-1/2 -translate-y-1/2"
+          className="absolute left-4 sm:left-12 top-1/2 -translate-y-1/2 w-12 sm:w-20 md:w-28 h-auto"
           alt=""
         />
 
-        <div className="text-center">
+        {/* Center text */}
+        <div className="text-center px-6">
           <p className="font-sans text-2xl font-bold mb-2">Elisabetta & Ivan</p>
           <p className="text-sm">{t.footerDate}</p>
           <p className="text-xs mt-4 opacity-70">{t.footerMadeWithLove}</p>
         </div>
 
+        {/* Right image */}
         <img
           src="./assets/transparent_cacti.png"
-          className="h-[120px] w-auto object-contain absolute right-12 top-1/2 -translate-y-1/2"
+          className="absolute right-4 sm:right-12 top-1/2 -translate-y-1/2 w-12 sm:w-20 md:w-28 h-auto"
           alt=""
         />
       </div>

@@ -17,82 +17,120 @@ const galleryItems = [
 ];
 
 const ratioClass = {
-  verticalext: "aspect-[3/10]",   // vertical
-  vertical: "aspect-[3/7.5]",   // vertical
-  square: "aspect-[3/3]",   // square
-  regular: "aspect-[4/3.1]",   // horizontal
-  wide: "aspect-[16/9]",     // cinematic wide
-  verywide2: "aspect-[16/9]" , // ultra wide
-  verywide: "aspect-[21/9]"  // ultra wide
+  verticalext: "aspect-[3/10]",
+  vertical: "aspect-[3/7.5]",
+  square: "aspect-square",
+  regular: "aspect-[4/3]",
+  wide: "aspect-video",
+  verywide2: "aspect-video",
+  verywide: "aspect-[21/9]"
 };
 
 const PhotoGallery: React.FC = () => {
   return (
-    <div className="flex flex-col gap-12 mt-12">
+    <div className="mt-12">
 
-      {/* === FIRST IMAGE FULL WIDTH === */}
-      <div className="overflow-hidden rounded-lg shadow-lg border-4 border-transparent pointer-events-none mb-12">
-        <img
-          src={galleryItems[0].path}
-          alt="Gallery first image"
-          className="w-full h-full object-cover object-center"
-        />
-      </div>
-
-      {/* === TIMELINE + REST OF THE GALLERY === */}
-      <div className="flex gap-8">
-
-        {/* TIMELINE VERTICAL */}
-        <div className="relative flex flex-col items-center w-16 justify-between">
-          {/* Vertical line */}
-          <div className="absolute top-0 bottom-0 w-[2px] bg-terracotta/40"></div>
-          <div className="h-6"></div>
-          {[
-            "2025","2024","2023","2022","2021",
-            "2020","2019","2018","2017","2016","2015"
-          ].map((item, index) => (
-            <div key={index} className="relative flex flex-col items-center">
-              <div className="w-4 h-4 rounded-full bg-terracotta z-10"></div>
-              <span className="mt-2 text-xs font-semibold text-terracotta bg-ivory px-2">
-                {item}
-              </span>
-            </div>
-          ))}
-          <div className="h-6"></div>
+  {/* ----------------------------- */}
+  {/* MOBILE VERSION */}
+  {/* ----------------------------- */}
+  <div className="flex flex-col gap-8 md:hidden">
+    <div key={1} className="w-full rounded-xl shadow-md overflow-hidden bg-ivory">
+      <img
+        src={galleryItems[1].path}
+        className="w-full h-auto object-cover"
+        style={{ objectPosition: galleryItems[1].objectPosition || "center" }}
+      />
+      {galleryItems[1].description && (
+        <div className="p-3 text-green/80 text-sm text-center">
+          {galleryItems[1].description}
         </div>
-
-        {/* GALLERY GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 flex-1">
-          {galleryItems.slice(1).map((item, index) => (
-            <div
-              key={index}
-              className={`
-                relative overflow-hidden rounded-lg shadow-lg border-4 transition-all duration-300
-                group hover:border-terracotta border-transparent
-                ${ratioClass[item.ratio]}
-                ${item.className}
-              `}
-            >
-              <img
-                src={item.path}
-                alt={`Gallery image ${index + 2}`}
-                className={`
-                  w-full h-full object-cover 
-                  ${item.objectPosition ? `object-${item.objectPosition}` : "object-center"}
-                  transition-transform duration-500 group-hover:scale-105
-                `}
-              />
-              {item.description && (
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-white text-sm">{item.description}</span>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-      </div>
+      )}
     </div>
+
+    <div key={0} className="w-full rounded-xl shadow-md overflow-hidden bg-ivory">
+      <img
+        src={galleryItems[0].path}
+        className="w-full h-auto object-cover"
+        style={{ objectPosition: galleryItems[0].objectPosition || "center" }}
+      />
+      {galleryItems[0].description && (
+        <div className="p-3 text-green/80 text-sm text-center">
+          {galleryItems[0].description}
+        </div>
+      )}
+    </div>
+
+    {galleryItems.slice(2).map((item, index) => (
+      <div key={index} className="w-full rounded-xl shadow-md overflow-hidden bg-ivory">
+        <img
+          src={item.path}
+          className="w-full h-auto object-cover"
+          style={{ objectPosition: item.objectPosition || "center" }}
+        />
+        {item.description && (
+          <div className="p-3 text-green/80 text-sm text-center">
+            {item.description}
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+
+  {/* ----------------------------- */}
+  {/* DESKTOP VERSION */}
+  {/* ----------------------------- */}
+  <div className="hidden md:flex flex-col gap-12">
+
+    {/* FIRST FULL WIDTH IMAGE */}
+    <div className="overflow-hidden rounded-lg shadow-lg pointer-events-none mb-12">
+      <img
+        src={galleryItems[0].path}
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    {/* TIMELINE + GRID */}
+    <div className="flex gap-8 relative items-stretch">
+
+      {/* === Timeline === */}
+      <div className="flex flex-col items-center w-16 justify-between">
+        <div className="absolute top-0 bottom-0 w-[2px] bg-terracotta/40 left-1/2 transform -translate-x-1/2"></div>
+        {["2025","2024","2023","2022","2021","2020","2019","2018","2017","2016","2015"].map((year, idx) => (
+          <div key={idx} className="relative flex flex-col items-center flex-1 justify-center">
+            <div className="w-4 h-4 rounded-full bg-terracotta z-10"></div>
+            <span className="mt-2 text-xs font-semibold text-terracotta bg-ivory px-2">
+              {year}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* === Gallery === */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 flex-1">
+        {galleryItems.map((item, index) => (
+          <div
+            key={index}
+            className={`relative overflow-hidden rounded-lg shadow-lg border-4 transition-all duration-300 group hover:border-terracotta border-transparent ${ratioClass[item.ratio]} ${item.className}`}
+          >
+            <img
+              src={item.path}
+              alt={`Gallery image ${index + 1}`}
+              className={`w-full h-full object-cover ${item.objectPosition ? `object-${item.objectPosition}` : "object-center"} transition-transform duration-500 group-hover:scale-105`}
+            />
+            {item.description && (
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <span className="text-white text-sm">{item.description}</span>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
   );
 };
 
