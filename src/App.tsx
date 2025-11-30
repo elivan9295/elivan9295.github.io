@@ -6,8 +6,8 @@ import Travel from './components/Travel.tsx';
 import Footer from './components/Footer.tsx';
 import { CalendarIcon, LocationIcon, PlaneIcon, BedIcon, SparklesIcon } from './components/icons.tsx';
 import AccordionItem from './components/AccordionItem.tsx';
-import { LanguageContext } from './contexts/LanguageContext.tsx';
-import { translations } from './translations.ts';
+import { LanguageContext } from '../contexts/LanguageContext.tsx';
+import { translations } from '../translations.ts';
 
 const App: React.FC = () => {
   const { language } = useContext(LanguageContext);
@@ -69,16 +69,13 @@ const App: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
 
             {/* Text */}
-            <div className="text-center md:text-left order-2 md:order-1">
+            <div style={{ whiteSpace: "pre-line" }} className="text-center md:text-left order-2 md:order-1">
                 <h2 className="font-titles font-bold text-4xl md:text-5xl text-orange mb-6">
                 {t.storyTitle}
                 </h2>
 
-                <p className="text-lg leading-relaxed text-green/80 mb-4">
-                {t.storyPara1}
-                </p>
-                <p className="text-lg leading-relaxed text-green/80">
-                {t.storyPara2}
+                <p className="text-lg leading-relaxed text-green/80 mb-4 text-justify">
+                {t.storyPara}
                 </p>
             </div>
 
@@ -107,37 +104,56 @@ const App: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-12 text-green mb-20">
 
             {/* WHEN */}
-            <div className="relative flex flex-col justify-between items-center bg-[#fdf8f2] rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-2xl transition-shadow duration-300 h-64">
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-rose-600 via-terracotta to-rose-600 rounded-full mt-3"></div>
-                <h3 className="font-sans font-semibold flex items-center gap-2 text-[clamp(0.875rem,2vw,1.25rem)]">
-                    <CalendarIcon className="w-5 h-5 text-terracotta" />
+
+            <div className="relative flex flex-col justify-between items-center rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-2xl overflow-hidden transition-shadow duration-300 h-64">
+                <div
+                    className="absolute inset-0 bg-cover bg-left bg-fixed"
+                    style={{ backgroundImage: "url('./assets/acquerello.png')" }}
+                ></div>
+                <div className="absolute inset-0 bg-ivory/20"></div>
+                    <div className="relative z-10 flex flex-col items-center text-center w-full h-full">
+                <h3 className="font-sans font-bold text-orange flex items-center pt-2 gap-2 text-[clamp(0.875rem,2vw,1.25rem)]">
+                    <CalendarIcon className="w-5 h-5" />
                     {t.detailsWhenTitle}
                 </h3>
-                <p className="font-light text-[clamp(1rem,3vw,1.5rem)] pt-5"> {t.detailsWhenValue}</p>
+                <p className="font-light text-[clamp(1rem,3vw,1.5rem)] pt-10"> {t.detailsWhenValue}</p>
                 <p className="text-green/80 mt-1">{t.detailsWhenValue1}</p>
-            </div>
+            </div></div>
 
             {/* LOCATION */}
-            <div className="relative flex flex-col justify-between items-center bg-[#fdf8f2] rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-2xl transition-shadow duration-300 h-64">
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-rose-600 via-terracotta to-rose-600 rounded-full mt-3"></div>
-                <h3 className="font-sans font-semibold flex items-center gap-2 text-[clamp(0.875rem,2vw,1.25rem)]">
-                    <LocationIcon className="w-5 h-5 text-terracotta" />
+            <div className="relative flex flex-col justify-between items-center rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-2xl overflow-hidden transition-shadow duration-300 h-64">
+                
+                <div
+                    className="absolute inset-0 bg-cover bg-center bg-fixed"
+                    style={{ backgroundImage: "url('./assets/acquerello.png')" }}
+                ></div>
+                <div className="absolute inset-0 bg-ivory/20"></div>
+                    <div className="relative z-10 flex flex-col items-center text-center w-full h-full">
+                <h3 className="font-sans font-bold text-orange flex items-center gap-2 pt-2 text-[clamp(0.875rem,2vw,1.25rem)]">
+                    <LocationIcon className="w-5 h-5" />
                     {t.detailsLocationTitle}
                 </h3>
-                <p className="font-light text-[clamp(1rem,3vw,1.5rem)] pt-5"> {t.detailsLocationValue}</p>
+                <p className="font-light text-[clamp(1rem,3vw,1.5rem)] pt-10"> {t.detailsLocationValue}</p>
                 <p className="text-green/80 text-[clamp(0.75rem,2.5vw,1rem)] mt-1">{t.detailsLocationValue1}</p>
+            </div>
             </div>
 
             {/* DRESS CODE */}
-            <div className="relative flex flex-col justify-between items-center bg-[#fdf8f2] rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-2xl transition-shadow duration-300 h-64">
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-rose-600 via-terracotta to-rose-600 rounded-full mt-3"></div>
-                <h3 className="font-sans font-semibold flex items-center gap-2 text-[clamp(0.875rem,2vw,1.25rem)]">
-                    <SparklesIcon className="w-5 h-5 text-terracotta" />
+            <div className="relative flex flex-col justify-between items-center rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-2xl overflow-hidden transition-shadow duration-300 h-64">
+                
+                <div
+                    className="absolute inset-0 bg-cover bg-right bg-fixed "
+                    style={{ backgroundImage: "url('./assets/acquerello.png')" }}
+                ></div>
+                <div className="absolute inset-0 bg-ivory/20"></div>
+                <div className="relative z-10 flex flex-col items-center text-center w-full h-full">
+                    <h3 className="font-sans text-orange font-bold flex items-center pt-2 gap-2 text-[clamp(0.875rem,2vw,1.25rem)]">
+                    <SparklesIcon className="w-5 h-5" />
                     {t.dressCodeTitle}
                 </h3>
-                <p className="font-light text-[clamp(1rem,3vw,1.5rem)] pt-5">{t.dressCodeValue}</p>
+                <p className="font-light text-[clamp(1rem,3vw,1.5rem)] pt-10">{t.dressCodeValue}</p>
                 <p className="text-green/80 text-[clamp(0.75rem,2.5vw,1rem)] mt-1">{t.dressCodeValue1}</p>
-            </div>
+            </div></div>
         </div>
 
                 {/* MAP */}
@@ -171,7 +187,7 @@ const App: React.FC = () => {
                     {t.travelTitle}
                 </h2>
                 <div className="space-y-4 text-left text-green">
-                    <div className="bg-terracotta/20 p-8 rounded-lg shadow-sm">
+                    <div style={{ whiteSpace: "pre-line" }} className="bg-terracotta/20 p-8 rounded-lg shadow-sm">
                         <h3 className="font-sans font-bold text-2xl mb-4 text-orange flex items-center gap-3"><PlaneIcon className="w-6 h-6" /> {t.travelGettingHereTitle}</h3>
                         <p className="leading-relaxed text-green/80">
                             {t.travelGettingHerePara}
@@ -190,14 +206,14 @@ const App: React.FC = () => {
                     </AccordionItem>
                     
                     <AccordionItem title={<h3 className="font-sans font-bold text-2xl text-orange flex items-center gap-3"><SparklesIcon className="w-6 h-6" /> {t.travelExploreTitle}</h3>}>
-                        <div className="pt-4 text-green/80">
+                        <div style={{ whiteSpace: "pre-line" }} className="pt-4 text-green/80 md:pb-10">
                            <p className="leading-relaxed">
                                 {t.travelExplorePara}
                             </p>
-                        </div>
+                        </div>                        
+                        <Travel />
                     </AccordionItem>
                 </div>
-               <Travel />
             </div>
         </section>
 
@@ -245,7 +261,7 @@ const App: React.FC = () => {
                     {t.giftsPara2}
                 </p>
                 <div className="bg-terracotta/20 inline-block px-6 py-4 rounded-lg font-mono text-orange tracking-widest text-lg">
-                    IT 12 A 12345 12345 123456789012
+                    coming soon ...
                 </div>
                  <p className="text-lg leading-relaxed text-green/80 mt-8">
                     {t.giftsPara3}
@@ -254,7 +270,7 @@ const App: React.FC = () => {
         </section>
 
         {/* RSVP Section */}
-        <section id="rsvp" className="bg-ivory pt-20 px-6 md:px-12">
+        <section id="rsvp" className="bg-ivory pt-10 px-6 md:px-12">
             <div className="max-w-4xl mx-auto text-center">
                 <div className="flex items-center justify-center w-full my-16">
                     <div className="flex-1 border-t border-terracotta/40"></div>
@@ -267,8 +283,7 @@ const App: React.FC = () => {
 
                     <div className="flex-1 border-t border-terracotta/40"></div>
                     </div>
-                <h2 className="font-titles font-bold text-4xl md:text-5xl text-orange mb-4">{t.rsvpTitle}</h2>
-                <p className="text-lg mb-8 pt-10 text-green/80">{t.rsvpPara}</p>
+                <h2 className="font-titles font-bold text-4xl md:text-5xl text-orange mb-4 pb-10">{t.rsvpTitle}</h2>
                 <div className="aspect-w-1 aspect-h-1 md:aspect-w-3 md:aspect-h-2">
                    <iframe
                       src={googleFormUrl}

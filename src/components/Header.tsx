@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useContext } from 'react';
-import { LanguageContext } from '../contexts/LanguageContext.tsx';
-import { translations } from '../translations.ts';
+import { LanguageContext } from '../../contexts/LanguageContext.tsx';
+import { translations } from '../../translations.ts';
 import { MenuIcon, CloseIcon } from './icons.tsx';
 
 const navItems = [
