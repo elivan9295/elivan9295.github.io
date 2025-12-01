@@ -26,6 +26,23 @@ const ratioClass = {
   verywide: "aspect-[21/9]"
 };
 
+const mobileOrderGallery =  [
+      galleryItems[1],
+      galleryItems[0],
+      galleryItems[2],
+      galleryItems[3],
+      galleryItems[4],
+      galleryItems[5],
+      galleryItems[6],
+      galleryItems[7],
+      galleryItems[8],
+      galleryItems[9],
+      galleryItems[11],
+      galleryItems[10],
+      galleryItems[12]
+    ];
+    
+
 const PhotoGallery: React.FC = () => {
   return (
     <div className="mt-12">
@@ -34,33 +51,7 @@ const PhotoGallery: React.FC = () => {
   {/* MOBILE VERSION */}
   {/* ----------------------------- */}
   <div className="flex flex-col gap-8 md:hidden">
-    <div key={1} className="w-full rounded-xl shadow-md overflow-hidden bg-ivory">
-      <img
-        src={galleryItems[1].path}
-        className="w-full h-auto object-cover"
-        style={{ objectPosition: galleryItems[1].objectPosition || "center" }}
-      />
-      {galleryItems[1].description && (
-        <div className="p-3 text-green/80 text-sm text-center">
-          {galleryItems[1].description}
-        </div>
-      )}
-    </div>
-
-    <div key={0} className="w-full rounded-xl shadow-md overflow-hidden bg-ivory">
-      <img
-        src={galleryItems[0].path}
-        className="w-full h-auto object-cover"
-        style={{ objectPosition: galleryItems[0].objectPosition || "center" }}
-      />
-      {galleryItems[0].description && (
-        <div className="p-3 text-green/80 text-sm text-center">
-          {galleryItems[0].description}
-        </div>
-      )}
-    </div>
-
-    {galleryItems.slice(2).map((item, index) => (
+    {mobileOrderGallery.map((item, index) => (
       <div key={index} className="w-full rounded-xl shadow-md overflow-hidden bg-ivory">
         <img
           src={item.path}
@@ -94,7 +85,7 @@ const PhotoGallery: React.FC = () => {
 
       {/* === Timeline === */}
       <div className="flex flex-col items-center w-16 justify-between">
-        <div className="absolute top-0 bottom-0 w-[2px] bg-terracotta/40 left-1/2 transform -translate-x-1/2"></div>
+        <div className="absolute top-0 bottom-0 w-[2px] bg-terracotta/40"></div>
         {["2025","2024","2023","2022","2021","2020","2019","2018","2017","2016","2015"].map((year, idx) => (
           <div key={idx} className="relative flex flex-col items-center flex-1 justify-center">
             <div className="w-4 h-4 rounded-full bg-terracotta z-10"></div>
