@@ -1,8 +1,8 @@
 import React from 'react';
 
 const galleryItems = [
-  { path: "./assets/2024.jpg", ratio: "verywide", className: "md:row-span-2 md:col-span-4", description: "2024 - Death Valley, California", objectPosition: "center" },
-  { path: "./assets/2025.jpg", ratio: "verywide", className: "md:row-span-2 md:col-span-3", year:"2025", description: "2025 - Starnberger See, Deutschland", objectPosition: "bottom" },
+  { path: "./assets/2025.jpg", ratio: "verywide", className: "md:row-span-2 md:col-span-4", year:"2025", description: "2025 - Starnberger See, Deutschland", objectPosition: "bottom" },
+  { path: "./assets/2024.jpg", ratio: "verywide", className: "md:row-span-2 md:col-span-3", description: "2024 - Death Valley, California", objectPosition: "top" },
   { path: "./assets/2024.3.jpg", ratio: "vertical", className: "md:row-span-3 md:col-span-1", year:"2024", description: "2024 - München, Deutschland", objectPosition: "center" },
   { path: "./assets/2024.2.jpg", ratio: "regular", className: "md:row-span-2 md:col-span-2", year:"2024", description: "2024 - Κέρκυρα, Ελλάδα", objectPosition: "center" },
   { path: "./assets/2022.jpg", ratio: "vertical", className: "md:row-span-3 md:col-span-1", year:"2023", description: "2023 - München, Deutschland", objectPosition: "center" },
@@ -26,22 +26,6 @@ const ratioClass = {
   verywide: "aspect-[21/9]"
 };
 
-const mobileOrderGallery =  [
-      galleryItems[1],
-      galleryItems[0],
-      galleryItems[2],
-      galleryItems[3],
-      galleryItems[4],
-      galleryItems[5],
-      galleryItems[6],
-      galleryItems[7],
-      galleryItems[8],
-      galleryItems[9],
-      galleryItems[11],
-      galleryItems[10],
-      galleryItems[12]
-    ];
-    
 
 const PhotoGallery: React.FC = () => {
   return (
@@ -51,7 +35,7 @@ const PhotoGallery: React.FC = () => {
   {/* MOBILE VERSION */}
   {/* ----------------------------- */}
   <div className="flex flex-col gap-8 md:hidden">
-    {mobileOrderGallery.map((item, index) => (
+    {galleryItems.map((item, index) => (
       <div key={index} className="w-full rounded-xl shadow-md overflow-hidden bg-ivory">
         <img
           src={item.path}
@@ -71,14 +55,6 @@ const PhotoGallery: React.FC = () => {
   {/* DESKTOP VERSION */}
   {/* ----------------------------- */}
   <div className="hidden md:flex flex-col gap-12">
-
-    {/* FIRST FULL WIDTH IMAGE */}
-    <div className="overflow-hidden rounded-lg shadow-lg pointer-events-none mb-12">
-      <img
-        src={galleryItems[0].path}
-        className="w-full h-full object-cover"
-      />
-    </div>
 
     {/* TIMELINE + GRID */}
     <div className="flex gap-8 relative items-stretch">

@@ -18,10 +18,13 @@ const Footer: React.FC = () => {
         />
 
         {/* Center text */}
-        <div className="text-center px-6">
-          <p className="font-sans text-2xl font-bold mb-2">Elisabetta & Ivan</p>
-          <p className="text-sm">{t.footerDate}</p>
-          <p className="text-xs mt-4 opacity-70">{t.footerMadeWithLove}</p>
+        <div className="font-sans text-center px-6">
+          <p className="font-script text-2xl md:text-4xl mb-2">
+            Ivan<span className="relative font-serif opacity-50 text-1.5xl md:text-3xl" style={{ top: '0.3em', right: '0.2em'}}>&</span><span className="relative" style={{ top: '0.4em', right: '0.4em'}}>Elisabetta</span>
+          </p>
+          <p>
+            <span className="font-script text-2xl md:text-4xl opacity-80 mt-5"  style={{ top: '0.3em'}}>{t.footerMadeWithLove}</span>
+          </p> 
         </div>
 
         {/* Right image */}

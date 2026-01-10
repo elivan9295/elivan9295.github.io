@@ -6,9 +6,8 @@ import { MenuIcon, CloseIcon } from './icons.tsx';
 const navItems = [
     { href: '#story', key: 'navStory' },
     { href: '#details', key: 'navDetails' },
-    { href: '#travel', key: 'navTravel' },
+    { href: '#faq', key: 'navTravel' },
     { href: '#photos', key: 'navPhotos' },
-    { href: '#gifts', key: 'navGifts' },
     { href: '#rsvp', key: 'navRsvp' },
 ];
 
@@ -33,11 +32,13 @@ const Header: React.FC = () => {
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-green/80 shadow-md backdrop-blur-sm' : 'bg-transparent'}`}>
-        <nav className="max-w-7xl mx-auto px-6 py-4">
+        <nav className="max-w-8xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
 
             {/* Logo */}
-            <a href="#home" className="font-sans text-2xl font-bold text-white">E&I</a>
+            <a href="#home" className="font-script text-3xl md:text-5xl font-bold text-white">
+              I<span className="relative" style={{ top: '0.4em', right: '0.4em'}}>E</span>
+            </a>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">

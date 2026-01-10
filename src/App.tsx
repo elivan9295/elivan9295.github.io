@@ -2,16 +2,18 @@
 import React, { useContext } from 'react';
 import Header from './components/Header.tsx';
 import PhotoGallery from './components/PhotoGallery.tsx';
+import Faq from './components/Faq.tsx';
 import Footer from './components/Footer.tsx';
-import { CalendarIcon, LocationIcon, PlaneIcon, BedIcon, SparklesIcon } from './components/icons.tsx';
+import { CalendarIcon, LocationIcon, SparklesIcon } from './components/icons.tsx';
 import AccordionItem from './components/AccordionItem.tsx';
 import { LanguageContext } from '../contexts/LanguageContext.tsx';
 import { translations } from '../translations.ts';
+import IBANBox from './components/IBANBox.tsx';
 
 const App: React.FC = () => {
   const { language } = useContext(LanguageContext);
   const t = translations[language];
-  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScHfE-Cfy_JnBhV4SS6RGH9MCDRDvJYXwGwolb37kEMHSU4eg/viewform?embedded=true";
+  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScHfE-Cfy_JnBhV4SS6RGH9MCDRDvJYXwGwolb37kEMHSU4eg/viewform?embedded=true&hl=en";
   return (
     <div className="bg-ivory text-green font-sans antialiased">
       <Header />
@@ -33,7 +35,7 @@ const App: React.FC = () => {
                 w-full
                 max-w-[700px]
                 object-contain
-                opacity-80
+                opacity-60
                 translate-x-[10%] 
                 md:translate-x-12
                 mx-auto
@@ -43,10 +45,11 @@ const App: React.FC = () => {
             />
 
             {/* TEXT */}
-            <div className="relative z-20 p-4">
-                <h1 className="font-script text-6xl md:text-9xl mb-2">Elisabetta & Ivan</h1>
-                <p className="text-xl md:text-2xl font-medium tracking-wider uppercase"></p>
-                <p className="mt-4 text-xl md:text-2xl font-sans">{t.heroDate}</p>
+            <div className="relative z-10 p-4">
+                <h1 className="font-script text-6xl md:text-9xl mb-2">
+                    <span className="relative" style={{left: '0.1em'}}>  Ivan</span><span className="relative font-serif opacity-30" style={{ top: '0.3em'}}>&</span><span className="relative" style={{ top: '0.6em', right: '0.2em'}}>Elisabetta</span></h1>
+                <br />
+                <p className="mt-4 text-l md:text-xl font-sans">{t.heroDate}</p>
             </div>
             </section>
 
@@ -68,8 +71,8 @@ const App: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
 
             {/* Text */}
-            <div style={{ whiteSpace: "pre-line" }} className="text-center md:text-left order-2 md:order-1 px-4 md:px-0">
-            <h2 className="font-titles font-bold text-2xl sm:text-3xl md:text-5xl text-orange mb-4 md:mb-6">
+            <div style={{ whiteSpace: "pre-line" }} className="text-left order-2 md:order-1 px-4 md:px-0">
+            <h2 className="font-titles font-extrabold text-4xl md:text-7xl text-orange mb-4 md:mb-6">
                 {t.storyTitle}
             </h2>
 
@@ -82,7 +85,7 @@ const App: React.FC = () => {
             <div className="order-1 md:order-2">
                 <img
                 src="./assets/hollywood.jpg"
-                alt="Elisabetta and Ivan smiling together"
+                alt="Ivan and Elisabetta smiling together"
                 className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-[4/5]"
                 />
             </div>
@@ -95,7 +98,7 @@ const App: React.FC = () => {
              <div className="max-w-6xl mx-auto text-center">
 
         {/* DETAILS TITLE */}
-        <h2 className="font-titles font-bold text-4xl md:text-5xl text-orange mb-20 flex items-center justify-center gap-4">
+        <h2 className="font-titles font-extrabold text-4xl md:text-7xl text-orange mb-20 flex items-center justify-center gap-4">
             {t.detailsTitle}
         </h2>
 
@@ -152,15 +155,14 @@ const App: React.FC = () => {
                 <SparklesIcon className="w-5 h-5" />
                 {t.dressCodeTitle}
                 </h3>
-                <p className="font-light text-[clamp(1.1rem,3vw,1.5rem)] sm:text-[clamp(1.2rem,3vw,1.5rem)] mt-2">{t.dressCodeValue}</p>
-                <p className="text-green/80 text-[clamp(0.85rem,2.5vw,1rem)] sm:text-[clamp(0.9rem,2.5vw,1rem)] mt-1">{t.dressCodeValue1}</p>
+                <p className="font-light text-[clamp(1.1rem,3vw,1.5rem)] sm:text-[clamp(1.2rem,3vw,1.5rem)] mt-2 pb-4 pt-2">{t.dressCodeValue}</p>
             </div>
             </div>
 
         </div>
 
-                {/* MAP */}
-                <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-lg mb-28">
+            {/* MAP */}
+            <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-lg mb-28">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6022.80181012093!2d17.194303!3d40.822174!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1347b17e717c4a13%3A0x2539274537f2b8e4!2sMasseria%20Papaperta!5e1!3m2!1sit!2sde!4v1763582274450!5m2!1sit!2sde"
                     className="w-full h-full border-0"
@@ -170,10 +172,70 @@ const App: React.FC = () => {
                 ></iframe>
                 </div>
             </div>
-            </section>
 
-    {/* Travel & Stay Section */}
-        <section id="travel" className="bg-ivory px-6 md:px-12">
+
+        <div className="w-full flex justify-center text-justify text-sans">
+            <div className="w-[80vw] max-w-5xl px-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+                {/* LEFT – TEXT */}
+                <div>
+                <p className="text-xs sm:text-base md:text-lg leading-snug sm:leading-relaxed text-green/80 mb-4">
+                    {(() => {
+                            switch(language) {
+                                case 'en':
+                                    return(
+                                       <span
+                                        className="font-script float-left mr-2 relative"
+                                        style={{
+                                            fontSize: '4rem',       // size of the drop cap
+                                            top: '-0.35em',           // move it upward
+                                            lineHeight: '1',         // keep spacing consistent
+                                            marginBottom: '-0.3em',  // vertical spacing below letter
+                                        }}
+                                        >
+                                        {t.giftsLetter}
+                                        </span>
+                                    );
+                                case 'it':
+                                    return(
+                                        <span
+                                        className="font-script float-left mr-2 relative"
+                                        style={{
+                                            fontSize: '4rem',       // size of the drop cap
+                                            top: '-0.35em',           // move it upward
+                                            marginBottom: '-0.6em',  // vertical spacing below letter
+                                            lineHeight: '1',         // keep spacing consistent
+                                        }}
+                                        >
+                                        {t.giftsLetter}
+                                        </span>
+                                    );
+                             }   
+                        })()}
+                    
+                    {t.giftsPara0}
+                </p>
+
+                <p className="text-xs sm:text-base md:text-lg leading-snug sm:leading-relaxed text-green/80 md:mt-4">
+                    {t.giftsPara1} 
+                </p>
+
+                <p className="italic text-center text-xs sm:text-base md:text-lg leading-snug sm:leading-relaxed text-green/80 mt-12">
+                    {t.giftsPara2}
+                </p>
+                </div>
+                {/* RIGHT – DETAILS */}
+                <div className="flex md:justify-end pt-4 md:pt-0">
+                    <div className="w-full md:w-5/6">
+                    <IBANBox />
+                </div></div>
+
+            </div></div></div>
+    </section>
+
+    {/* Faq Section */}
+        <section id="faq" className="bg-ivory px-6 md:px-12">
             <div className="max-w-4xl mx-auto text-center">
                 <div className="flex items-center justify-center w-full my-16">
                     <div className="flex-1 border-t border-terracotta/40"></div>
@@ -186,60 +248,10 @@ const App: React.FC = () => {
 
                     <div className="flex-1 border-t border-terracotta/40"></div>
                     </div>
-                <h2 className="font-titles font-bold text-4xl md:text-5xl text-orange mb-12 flex items-center justify-center gap-4">
+                <h2 className="font-titles font-extrabold text-4xl md:text-7xl text-orange mb-12 flex items-center justify-center gap-4">
                     {t.travelTitle}
                 </h2>
-                <div className="space-y-4 text-left text-green">
-                {/* Getting Here */}
-                <AccordionItem
-                    title={
-                    <h3 className="font-sans font-bold text-xl md:text-2xl text-orange flex items-center gap-3">
-                        <PlaneIcon className="w-5 h-5" /> {t.travelGettingHereTitle}
-                    </h3>
-                    }
-                >
-                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-sm md:text-base leading-relaxed whitespace-pre-line">
-                    {t.travelGettingHerePara}
-                    </div>
-                </AccordionItem>
-
-                {/* Accommodations */}
-                <AccordionItem
-                    title={
-                    <h3 className="font-sans font-bold text-xl md:text-2xl text-orange flex items-center gap-3">
-                        <BedIcon className="w-5 h-5" /> {t.travelAccommodationsTitle}
-                    </h3>
-                    }
-                >
-                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-sm md:text-base leading-relaxed  whitespace-pre-line">
-                    <p className="mb-2">{t.travelAccommodationsPara1}</p>
-                    <p>{t.travelAccommodationsPara2}</p>
-                    </div>
-                </AccordionItem>
-
-                {/* Explore */}
-                    <AccordionItem
-                    title={
-                        <h3 className="font-sans font-bold text-xl md:text-2xl text-orange flex items-center gap-3">
-                        <SparklesIcon className="w-5 h-5" /> {t.travelExploreTitle}
-                        </h3>
-                    }
-                    >
-                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-sm md:text-base leading-relaxed whitespace-pre-line">
-                        <p className="mb-4">{t.travelExplorePara}</p>
-                        <div className="relative w-full aspect-[4/5] md:aspect-video rounded-lg overflow-hidden shadow-md">
-                        <iframe
-                            src="https://www.google.com/maps/d/u/0/embed?mid=1cf-_BTZxw7TNEbSh8Ro8lrB-D74rKYU&ehbc=2E312F&noprof=1"
-                            className="absolute inset-0 w-full h-full"
-                            style={{ border: 0 }}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                        ></iframe>
-                        </div>
-                    </div>
-                    </AccordionItem>
-                </div>
+                <Faq />
             </div>
         </section>
 
@@ -258,57 +270,13 @@ const App: React.FC = () => {
 
                     <div className="flex-1 border-t border-terracotta/40"></div>
                     </div>
-            <h2 className="font-titles font-bold text-4xl md:text-5xl text-orange mb-12">{t.photosTitle}</h2>
+            <h2 className="font-titles font-extrabold text-4xl md:text-7xl text-orange mb-12">{t.photosTitle}</h2>
             <PhotoGallery />
           </div>
         </section>
 
-        {/* Gift Section */}
-        <section id="gifts" className="bg-ivory px-6 md:px-12">
-        <div className="max-w-4xl mx-auto text-center">
-
-            {/* Divider with icon */}
-            <div className="flex items-center justify-center w-full my-12">
-            <div className="flex-1 border-t border-terracotta/40"></div>
-
-            <img
-                src="./assets/ficod.png"
-                className="w-28 h-auto mx-6"
-                alt="Icon"
-            />
-
-            <div className="flex-1 border-t border-terracotta/40"></div>
-            </div>
-
-            {/* Title */}
-            <h2 className="font-titles font-bold text-2xl sm:text-3xl md:text-5xl text-orange mb-6 flex items-center justify-center gap-4">
-            {t.giftsTitle}
-            </h2>
-
-            {/* Body paragraphs */}
-            <p className="text-sm sm:text-base md:text-lg leading-snug sm:leading-relaxed text-green/80 mb-4">
-            {t.giftsPara1}
-            </p>
-
-            <p className="text-sm sm:text-base md:text-lg leading-snug sm:leading-relaxed text-green/80 mb-4 ">
-            {t.giftsPara2}
-            </p>
-
-            <div className="bg-terracotta/20 inline-block px-6 py-4 rounded-lg font-mono text-center text-orange tracking-widest text-sm sm:text-base md:text-lg">
-            coming soon ...
-            </div>
-
-            <p className="text-sm sm:text-base md:text-lg leading-snug sm:leading-relaxed text-green/80 mt-4">
-            {t.giftsPara3}
-            </p>
-
-        </div>
-        </section>
-
-
-
         {/* RSVP Section */}
-        <section id="rsvp" className="bg-ivory pt-10 px-6 md:px-12">
+        <section id="rsvp" className="bg-ivory px-6 md:px-12">
             <div className="max-w-4xl mx-auto text-center">
                 <div className="flex items-center justify-center w-full my-16">
                     <div className="flex-1 border-t border-terracotta/40"></div>
@@ -321,7 +289,7 @@ const App: React.FC = () => {
 
                     <div className="flex-1 border-t border-terracotta/40"></div>
                     </div>
-                <h2 className="font-titles font-bold text-4xl md:text-5xl text-orange mb-4 pb-10">{t.rsvpTitle}</h2>
+                <h2 className="font-titles font-extrabold text-4xl md:text-7xl text-orange mb-4 pb-10">{t.rsvpTitle}</h2>
                 <div className="aspect-w-1 aspect-h-1 md:aspect-w-3 md:aspect-h-2">
                    <iframe
                       src={googleFormUrl}

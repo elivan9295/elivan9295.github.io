@@ -88,6 +88,103 @@ export const CloseIcon: React.FC<IconProps> = ({ className }) => (
     </svg>
 );
 
+export const PersonIcon: React.FC<IconProps> = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+    />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M4.5 20.25a7.5 7.5 0 0115 0"
+    />
+  </svg>
+);
+
+export const ItineraryIcon: React.FC<IconProps> = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M8.25 3v3M15.75 3v3M3.75 7.5h16.5"
+    />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M6 10.5h4.5M6 14.25h7.5M6 18h6"
+    />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M5.25 4.5h13.5A1.5 1.5 0 0120.25 6v13.5a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5V6a1.5 1.5 0 011.5-1.5z"
+    />
+  </svg>
+);
+
+export const PhotoIcon: React.FC<IconProps> = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M6.75 7.5l1.5-2.25h7.5l1.5 2.25"
+    />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M3.75 7.5h16.5A1.5 1.5 0 0121.75 9v9.75a1.5 1.5 0 01-1.5 1.5H3.75a1.5 1.5 0 01-1.5-1.5V9a1.5 1.5 0 011.5-1.5z"
+    />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M12 15a3 3 0 100-6 3 3 0 000 6z"
+    />
+  </svg>
+);
+
+export const ContactIcon: React.FC<IconProps> = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M3.75 6.75h16.5A1.5 1.5 0 0121.75 8.25v7.5a1.5 1.5 0 01-1.5 1.5H3.75a1.5 1.5 0 01-1.5-1.5v-7.5a1.5 1.5 0 011.5-1.5z"
+    />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M3.75 8.25l8.25 5.25 8.25-5.25"
+    />
+  </svg>
+);
 
 export const FloralDivider: React.FC<IconProps> = ({ className }) => (
   <svg width="250" height="50" viewBox="0 0 250 50" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
