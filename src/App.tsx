@@ -62,7 +62,7 @@ const App: React.FC = () => {
         {/* Background Image */}
         <div
             className="absolute inset-0 bg-cover bg-center bg-fixed"
-            style={{ backgroundImage: "url('\acquerello.png')" }}
+            style={{ backgroundImage: "url('/assets/acquerello.png')" }}
         ></div>
         <div className="absolute inset-0 bg-ivory/20"></div>
 
