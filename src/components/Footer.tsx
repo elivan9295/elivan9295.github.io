@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
 
         {/* Left image */}
         <img
-          src="./assets/transparent_cacti.png"
+          src="/assets/transparent_cacti.png"
           className="absolute left-4 sm:left-12 top-1/2 -translate-y-1/2 w-12 sm:w-20 md:w-28 h-auto"
           alt=""
         />
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
 
         {/* Right image */}
         <img
-          src="./assets/transparent_cacti.png"
+          src="/assets/transparent_cacti.png"
           className="absolute right-4 sm:right-12 top-1/2 -translate-y-1/2 w-12 sm:w-20 md:w-28 h-auto"
           alt=""
         />

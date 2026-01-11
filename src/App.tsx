@@ -27,7 +27,7 @@ const App: React.FC = () => {
 
             {/* Image */}
             <img
-                src="./assets/trullo4.png"
+                src="/assets/trullo4.png"
                 className="
                 relative z-20
                 h-auto
@@ -62,7 +62,7 @@ const App: React.FC = () => {
         {/* Background Image */}
         <div
             className="absolute inset-0 bg-cover bg-center bg-fixed"
-            style={{ backgroundImage: "url('./assets/acquerello.png')" }}
+            style={{ backgroundImage: "url('\acquerello.png')" }}
         ></div>
         <div className="absolute inset-0 bg-ivory/20"></div>
 
@@ -84,7 +84,7 @@ const App: React.FC = () => {
             {/* Image */}
             <div className="order-1 md:order-2">
                 <img
-                src="./assets/hollywood.jpg"
+                src="/assets/hollywood.jpg"
                 alt="Ivan and Elisabetta smiling together"
                 className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-[4/5]"
                 />
@@ -109,7 +109,7 @@ const App: React.FC = () => {
             <div className="relative flex flex-col items-center rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-2xl overflow-hidden transition-shadow duration-300 h-64">
             <div
                 className="absolute inset-0 bg-cover bg-center bg-fixed"
-                style={{ backgroundImage: "url('./assets/acquerello.png')" }}
+                style={{ backgroundImage: "url('/assets/acquerello.png')" }}
             ></div>
             <div className="absolute inset-0 bg-ivory/20"></div>
 
@@ -128,7 +128,7 @@ const App: React.FC = () => {
             <div className="relative flex flex-col items-center rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-2xl overflow-hidden transition-shadow duration-300 h-64">
             <div
                 className="absolute inset-0 bg-cover bg-center bg-fixed"
-                style={{ backgroundImage: "url('./assets/acquerello.png')" }}
+                style={{ backgroundImage: "url('/assets/acquerello.png')" }}
             ></div>
             <div className="absolute inset-0 bg-ivory/20"></div>
 
@@ -146,7 +146,7 @@ const App: React.FC = () => {
             <div className="relative flex flex-col items-center rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-2xl overflow-hidden transition-shadow duration-300 h-64">
             <div
                 className="absolute inset-0 bg-cover bg-right bg-fixed"
-                style={{ backgroundImage: "url('./assets/acquerello.png')" }}
+                style={{ backgroundImage: "url('/assets/acquerello.png')" }}
             ></div>
             <div className="absolute inset-0 bg-ivory/20"></div>
 
@@ -241,7 +241,7 @@ const App: React.FC = () => {
                     <div className="flex-1 border-t border-terracotta/40"></div>
 
                     <img
-                        src="./assets/ficod.png"
+                        src="/assets/ficod.png"
                         className="w-32 h-auto mx-6"
                         alt="Icon"
                     />
@@ -263,7 +263,7 @@ const App: React.FC = () => {
                     <div className="flex-1 border-t border-terracotta/40"></div>
 
                     <img
-                        src="./assets/ficod.png"
+                        src="/assets/ficod.png"
                         className="w-32 h-auto mx-6"
                         alt="Icon"
                     />
@@ -282,7 +282,7 @@ const App: React.FC = () => {
                     <div className="flex-1 border-t border-terracotta/40"></div>
 
                     <img
-                        src="./assets/ficod.png"
+                        src="/assets/ficod.png"
                         className="w-32 h-auto mx-6"
                         alt="Icon"
                     />

@@ -11,15 +11,16 @@ export default function IBANBox() {
   return (
     <div
       className="bg-terracotta/20 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-sm md:text-base leading-relaxed whitespace-pre-line cursor-pointer transition-all duration-300"
-      onClick={() => setExpanded(!expanded)}
+      onClick={() => !expanded && setExpanded(!expanded)}
     >
       {/* Toggle title */}
+      {!expanded && (
       <div className="text-m md:text-xl text-orange font-bold flex justify-center">
-        {expanded ? t.hide : t.show}
-      </div>
-
+        {t.show}
+      </div>)}
+      
       {expanded && (
-        <div className="mt-4 md:mt-4 flex flex-col items-center space-y-4">
+        <div className="flex flex-col items-center space-y-4">
 
           {/* IBAN */}
           <CopyButton

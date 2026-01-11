@@ -1,19 +1,19 @@
 import React from 'react';
 
 const galleryItems = [
-  { path: "./assets/2025.jpg", ratio: "verywide", className: "md:row-span-2 md:col-span-4", year:"2025", description: "2025 - Starnberger See, Deutschland", objectPosition: "bottom" },
-  { path: "./assets/2024.jpg", ratio: "verywide", className: "md:row-span-2 md:col-span-3", description: "2024 - Death Valley, California", objectPosition: "top" },
-  { path: "./assets/2024.3.jpg", ratio: "vertical", className: "md:row-span-3 md:col-span-1", year:"2024", description: "2024 - München, Deutschland", objectPosition: "center" },
-  { path: "./assets/2024.2.jpg", ratio: "regular", className: "md:row-span-2 md:col-span-2", year:"2024", description: "2024 - Κέρκυρα, Ελλάδα", objectPosition: "center" },
-  { path: "./assets/2022.jpg", ratio: "vertical", className: "md:row-span-3 md:col-span-1", year:"2023", description: "2023 - München, Deutschland", objectPosition: "center" },
-  { path: "./assets/2022.1.jpg", ratio: "vertical", className: "md:row-span-3 md:col-span-1", year:"2022", description: "2022 - Madrid, España", objectPosition: "left" },
-  { path: "./assets/2019.2.jpg", ratio: "regular", className: "md:row-span-2 md:col-span-2", year:"2019", description: "2019 - Paris, France", objectPosition: "center" },
-  { path: "./assets/2019.jpg", ratio: "regular", className: "", year:"2019", description: "2019 - Heidelberg, Deutschland", objectPosition: "left" },
-  { path: "./assets/2018.jpg", ratio: "square", className: "md:col-span-2", year:"2018", description: "2018 - Firenze, Italia", objectPosition: "center" },
-  { path: "./assets/2017.2.jpg", ratio: "square", className: "md:row-span-2 md:col-span-2", year:"2017", description: "2017 - Milano, Italia", objectPosition: "bottom" },
-  { path: "./assets/2016.jpg", ratio: "verticalext", className: "md:row-span-3 md:col-span-1", year:"2016", description: "2016 - Firenze, Italia", objectPosition: "top" },
-  { path: "./assets/2017.jpg", ratio: "verywide2", className: "md:row-span-1 md:col-span-3", year:"2017", description: "2017 - Maruggio, Italia", objectPosition: "top" },
-  { path: "./assets/2015.jpg", ratio: "verywide", className: "md:row-span-1 md:col-span-3", year:"2015", description: "2015 - Milano, Italia", objectPosition: "center" },
+  { path: "/assets/2025.jpg", ratio: "verywide", className: "md:row-span-2 md:col-span-4", year:"2025", description: "2025 - Starnberger See, Deutschland", objectPosition: "bottom" },
+  { path: "/assets/2024.jpg", ratio: "verywide", className: "md:row-span-2 md:col-span-3", description: "2024 - Death Valley, California", objectPosition: "top" },
+  { path: "/assets/2024.3.jpg", ratio: "vertical", className: "md:row-span-3 md:col-span-1", year:"2024", description: "2024 - München, Deutschland", objectPosition: "center" },
+  { path: "/assets/2024.2.jpg", ratio: "regular", className: "md:row-span-2 md:col-span-2", year:"2024", description: "2024 - Κέρκυρα, Ελλάδα", objectPosition: "center" },
+  { path: "/assets/2022.jpg", ratio: "vertical", className: "md:row-span-3 md:col-span-1", year:"2023", description: "2023 - München, Deutschland", objectPosition: "center" },
+  { path: "/assets/2022.1.jpg", ratio: "vertical", className: "md:row-span-3 md:col-span-1", year:"2022", description: "2022 - Madrid, España", objectPosition: "left" },
+  { path: "/assets/2019.2.jpg", ratio: "regular", className: "md:row-span-2 md:col-span-2", year:"2019", description: "2019 - Paris, France", objectPosition: "center" },
+  { path: "/assets/2019.jpg", ratio: "regular", className: "", year:"2019", description: "2019 - Heidelberg, Deutschland", objectPosition: "left" },
+  { path: "/assets/2018.jpg", ratio: "square", className: "md:col-span-2", year:"2018", description: "2018 - Firenze, Italia", objectPosition: "center" },
+  { path: "/assets/2017.2.jpg", ratio: "square", className: "md:row-span-2 md:col-span-2", year:"2017", description: "2017 - Milano, Italia", objectPosition: "bottom" },
+  { path: "/assets/2016.jpg", ratio: "verticalext", className: "md:row-span-3 md:col-span-1", year:"2016", description: "2016 - Firenze, Italia", objectPosition: "top" },
+  { path: "/assets/2017.jpg", ratio: "verywide2", className: "md:row-span-1 md:col-span-3", year:"2017", description: "2017 - Maruggio, Italia", objectPosition: "top" },
+  { path: "/assets/2015.jpg", ratio: "verywide", className: "md:row-span-1 md:col-span-3", year:"2015", description: "2015 - Milano, Italia", objectPosition: "center" },
 ];
 
 const ratioClass = {

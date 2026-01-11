@@ -187,13 +187,33 @@ const Faq: React.FC = () => {
                                 case 'en':
                                     return(
                                         <>
-                                        TODO
+                                        <p><strong>12:00 PM – Ceremony</strong><br />
+                                        The ceremony will begin at 12:00 PM. We kindly suggest arriving <strong>at least 30 minutes early</strong> to get comfortably settled.</p>
+                                        <br /><br />
+                                        <p><strong>Following the Ceremony – Lunch, fun &amp; photos</strong><br />
+                                        After the ceremony, we will continue celebrating together with lunch, joyful moments, and time for photos.</p>
+                                        <br /><br />
+                                        <p><strong>Between 7:00 PM and 8:00 PM – Cake Cutting</strong><br />
+                                        A special moment to share together.</p>
+                                        <br /><br />
+                                        <p><strong>After the Cake Cutting – After Party</strong><br />
+                                        For those who wish to stay, the celebration continues with music, dancing, and good vibes.</p>
                                         </>
                                     );
                                 case 'it':
                                     return(
                                         <>
-                                        TODO
+                                        <p><b>Ore 12:00 – Cerimonia</b><br />                                        
+                                        Vi aspettiamo per la cerimonia. Si consiglia di arrivare <b>almeno 30 minuti prima</b> per accomodarsi con calma.</p>
+                                        <br /><br />
+                                        <p><b>A seguire – Pranzo, divertimento e fotografie</b><br />
+                                        Dopo la cerimonia continueremo a festeggiare insieme con il pranzo, momenti di convivialità e qualche foto per ricordare la giornata.</p>
+                                        <br /><br />
+                                        <p><b>Tra le 19:00 e le 20:00 – Taglio della torta</b><br />
+                                        Un momento speciale da condividere tutti insieme.</p>
+                                        <br /><br />
+                                        <p><b>A seguire – Dopofesta</b><br />
+                                        Per chi desidera rimanere, la festa continua con musica, balli e sorrisi.</p>
                                         </>
                                     );
                             }
@@ -253,7 +273,7 @@ const Faq: React.FC = () => {
                                         <div className="flex justify-center px-4 mt-4">
                                         <div className="w-full max-w-sm flex justify-center">
                                             <CopyButton
-                                            text="ivaneli9295@gmail.com"
+                                            text="elivan9295@gmail.com"
                                             className="w-full truncate"
                                             />
                                         </div>
@@ -268,7 +288,7 @@ const Faq: React.FC = () => {
                                         <div className="flex justify-center px-4 mt-4">
                                         <div className="w-full max-w-sm flex justify-center">
                                             <CopyButton
-                                            text="ivaneli9295@gmail.com"
+                                            text="elivan9295@gmail.com"
                                             className="w-full truncate"
                                             />
                                         </div>
