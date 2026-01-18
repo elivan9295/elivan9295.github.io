@@ -7,8 +7,8 @@ const navItems = [
     { href: '#story', key: 'navStory' },
     { href: '#details', key: 'navDetails' },
     { href: '#faq', key: 'navTravel' },
-    { href: '#photos', key: 'navPhotos' },
     { href: '#rsvp', key: 'navRsvp' },
+    { href: '#photos', key: 'navPhotos' },
 ];
 
 const Header: React.FC = () => {

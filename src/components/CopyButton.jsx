@@ -16,9 +16,9 @@ export default function CopyButton({ text, className = "" }) {
   return (
 <button
   onClick={handleCopy}
-  className={`flex flex-col sm:flex-row items-center gap-1 px-3 py-2 bg-green-100 text-green-800 rounded hover:bg-green-200 transition-colors text-sm sm:text-base ${className}`}
+  className={`flex flex-col sm:flex-row items-center gap-1 px-3 py-2 bg-green-100 rounded hover:bg-green-200 transition-colors text-sm sm:text-base ${className}`}
 >
-  {/* Email text */}
+  {/* Text */}
   <span className="truncate">{text}</span>
 
   {/* Icon + feedback */}

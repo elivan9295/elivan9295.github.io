@@ -14,12 +14,12 @@ const Faq: React.FC = () => {
     {/* Getting Here */}
                 <AccordionItem
                     title={
-                    <h3 className="font-sans font-bold text-l md:text-2xl text-orange flex items-center gap-3">
+                    <h3 className="font-sans font-semibold text-l md:text-2xl text-orange flex items-center gap-3">
                         <PlaneIcon className="w-5 h-5" /> {t.travelGettingHereTitle}
                     </h3>
                     }
                 >
-                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-sm md:text-base leading-relaxed whitespace-pre-line">
+                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-xs md:text-base leading-relaxed whitespace-pre-line">
                         {(() => {
                             switch(language) {
                                 case 'en':
@@ -62,12 +62,12 @@ const Faq: React.FC = () => {
                 {/* Accommodations */}
                 <AccordionItem
                     title={
-                    <h3 className="font-sans font-bold text-l md:text-2xl text-orange flex items-center gap-3">
+                    <h3 className="font-sans font-semibold text-l md:text-2xl text-orange flex items-center gap-3">
                         <BedIcon className="w-5 h-5" /> {t.travelAccommodationsTitle}
                     </h3>
                     }
                 >
-                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-sm md:text-base leading-relaxed  whitespace-pre-line">
+                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-xs md:text-base leading-relaxed  whitespace-pre-line">
                         {(() => {
                             switch(language) {
                                 case 'en':
@@ -98,12 +98,12 @@ const Faq: React.FC = () => {
                 {/* Explore */}
                     <AccordionItem
                     title={
-                        <h3 className="font-sans font-bold text-l md:text-2xl text-orange flex items-center gap-3">
+                        <h3 className="font-sans font-semibold text-l md:text-2xl text-orange flex items-center gap-3">
                         <SparklesIcon className="w-5 h-5" /> {t.travelExploreTitle}
                         </h3>
                     }
                     >
-                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-sm md:text-base leading-relaxed whitespace-pre-line">
+                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-xs md:text-base leading-relaxed whitespace-pre-line">
                         <p className="mb-4">
                             {(() => {
                             switch(language) {
@@ -126,15 +126,21 @@ const Faq: React.FC = () => {
                             }
                         })()}
                         </p>
-                        <div className="relative w-full aspect-[4/5] md:aspect-video rounded-lg overflow-hidden shadow-md">
-                        <iframe
-                            src="https://www.google.com/maps/d/u/0/embed?mid=1cf-_BTZxw7TNEbSh8Ro8lrB-D74rKYU&ehbc=2E312F&noprof=1"
-                            className="absolute inset-0 w-full h-full"
-                            style={{ border: 0 }}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                        ></iframe>
+                        <div className="w-full max-w-4xl mx-auto">
+                             {/* Desktop: show iframe on md+ */}
+                            <div className="hidden md:block relative w-full aspect-[4/5] md:aspect-video rounded-lg overflow-hidden shadow-md">
+                                <iframe
+                                src="https://www.google.com/maps/d/u/0/embed?mid=1cf-_BTZxw7TNEbSh8Ro8lrB-D74rKYU&ehbc=2E312F&noprof=1"
+                                className="absolute inset-0 w-full h-full"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                ></iframe>
+                            </div>
+                            <div className='text-ivory pt-4 md:hidden'>
+                                <MapLinkCard link = "https://www.google.com/maps/d/u/0/embed?mid=1cf-_BTZxw7TNEbSh8Ro8lrB-D74rKYU&ehbc=2E312F&noprof=1" title = {t.mapLink} />
+                            </div>
                         </div>
                     </div>
                     </AccordionItem>
@@ -142,12 +148,12 @@ const Faq: React.FC = () => {
                     {/* +1 & kids */}
                 <AccordionItem
                     title={
-                    <h3 className="font-sans font-bold text-l md:text-2xl text-orange flex items-center gap-3">
+                    <h3 className="font-sans font-semibold text-l md:text-2xl text-orange flex items-center gap-3">
                         <PersonIcon className="w-5 h-5" /> {t.invitiTitle}
                     </h3>
                     }
                 >
-                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-sm md:text-base leading-relaxed  whitespace-pre-line">
+                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-xs md:text-base leading-relaxed  whitespace-pre-line">
                         {(() => {
                             switch(language) {
                                 case 'en':
@@ -176,12 +182,12 @@ const Faq: React.FC = () => {
                 {/* wedding itinerary */}
                 <AccordionItem
                     title={
-                    <h3 className="font-sans font-bold text-l md:text-2xl text-orange flex items-center gap-3">
+                    <h3 className="font-sans font-semibold text-l md:text-2xl text-orange flex items-center gap-3">
                         <ItineraryIcon className="w-5 h-5" /> {t.itineraryTitle}
                     </h3>
                     }
                 >
-                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-sm md:text-base leading-relaxed  whitespace-pre-line">
+                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-xs md:text-base leading-relaxed  whitespace-pre-line">
                         {(() => {
                             switch(language) {
                                 case 'en':
@@ -196,7 +202,7 @@ const Faq: React.FC = () => {
                                         <p><strong>Between 7:00 PM and 8:00 PM – Cake Cutting</strong><br />
                                         A special moment to share together.</p>
                                         <br /><br />
-                                        <p><strong>After the Cake Cutting – After Party</strong><br />
+                                        <p><strong>After Party</strong><br />
                                         For those who wish to stay, the celebration continues with music, dancing, and good vibes.</p>
                                         </>
                                     );
@@ -224,12 +230,12 @@ const Faq: React.FC = () => {
                 {/* no photo */}
                 <AccordionItem
                     title={
-                    <h3 className="font-sans font-bold text-l md:text-2xl text-orange flex items-center gap-3">
+                    <h3 className="font-sans font-semibold text-l md:text-2xl text-orange flex items-center gap-3">
                         <PhotoIcon className="w-5 h-5" /> {t.nophotoTitle}
                     </h3>
                     }
                 >
-                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-sm md:text-base leading-relaxed  whitespace-pre-line">
+                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-xs md:text-base leading-relaxed  whitespace-pre-line">
                         {(() => {
                             switch(language) {
                                 case 'en':
@@ -256,12 +262,12 @@ const Faq: React.FC = () => {
                 {/* contacts */}
                 <AccordionItem
                     title={
-                    <h3 className="font-sans font-bold text-l md:text-2xl text-orange flex items-center gap-3">
+                    <h3 className="font-sans font-semibold text-l md:text-2xl text-orange flex items-center gap-3">
                         <ContactIcon className="w-5 h-5" /> {t.contactsTitle}
                     </h3>
                     }
                 >
-                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-sm md:text-base leading-relaxed  whitespace-pre-line">
+                    <div className="bg-terracotta/10 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-xs md:text-base leading-relaxed  whitespace-pre-line">
                         {(() => {
                             switch(language) {
                                 case 'en':
@@ -302,5 +308,34 @@ const Faq: React.FC = () => {
     </div>
     );
   };
+
+  const MapLinkCard = ({ link, title  }) => {
+  return (
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`
+        relative
+        w-[90%] max-w-md
+        mx-auto
+        flex flex-col justify-center items-center
+        bg-green/75
+        text-ivory-100
+        font-semibold
+        text-sm md:text-xl
+        py-6 md:py-8
+        px-6 md:px-8
+        rounded-2xl
+        shadow-lg
+        transition-all duration-300
+        hover:bg-green/85 hover:scale-[1.02]
+        text-center
+      `}
+    >
+      <span>{title}</span>
+    </a>
+  );
+};
   
 export default Faq;

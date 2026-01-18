@@ -9,18 +9,33 @@ export default function IBANBox() {
   const t = translations[language];
 
   return (
-    <div
-      className="bg-terracotta/20 p-6 md:p-8 rounded-lg shadow-sm text-green/80 text-sm md:text-base leading-relaxed whitespace-pre-line cursor-pointer transition-all duration-300"
-      onClick={() => !expanded && setExpanded(!expanded)}
+   <div
+      className={`
+    bg-green/80
+    p-5 md:p-7
+    rounded-2xl
+    shadow-lg
+    border border-green/20
+    text-ivory-800
+    text-sm md:text-base
+    leading-relaxed
+    cursor-pointer
+    select-none
+    overflow-hidden
+    transition-all duration-500
+    hover:shadow-2xl
+    ${!expanded ? "hover:scale-[1.02] active:scale-95" : ""}
+  `}
+  onClick={() => !expanded && setExpanded(!expanded)}
     >
       {/* Toggle title */}
       {!expanded && (
-      <div className="text-m md:text-xl text-orange font-bold flex justify-center">
+      <div className="text-m md:text-xl text-ivory font-bold flex justify-center">
         {t.show}
       </div>)}
       
       {expanded && (
-        <div className="flex flex-col items-center space-y-4">
+        <div className="flex flex-col items-center space-y-4 text-ivory ">
 
           {/* IBAN */}
           <CopyButton

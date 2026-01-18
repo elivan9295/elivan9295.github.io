@@ -4,11 +4,12 @@ import Header from './components/Header.tsx';
 import PhotoGallery from './components/PhotoGallery.tsx';
 import Faq from './components/Faq.tsx';
 import Footer from './components/Footer.tsx';
+import Divider from './components/Divider.tsx';
 import { CalendarIcon, LocationIcon, SparklesIcon } from './components/icons.tsx';
-import AccordionItem from './components/AccordionItem.tsx';
 import { LanguageContext } from '../contexts/LanguageContext.tsx';
 import { translations } from '../translations.ts';
 import IBANBox from './components/IBANBox.tsx';
+import RSVPButton from './components/RSVPButton.tsx';
 
 const App: React.FC = () => {
   const { language } = useContext(LanguageContext);
@@ -76,7 +77,7 @@ const App: React.FC = () => {
                 {t.storyTitle}
             </h2>
 
-            <p className="text-sm sm:text-base md:text-lg leading-snug sm:leading-relaxed text-green/80 mb-4 text-justify">
+            <p className="text-xs sm:text-base md:text-lg leading-snug sm:leading-relaxed text-green/80 mb-4 text-justify">
                 {t.storyPara}
             </p>
             </div>
@@ -175,7 +176,7 @@ const App: React.FC = () => {
 
 
         <div className="w-full flex justify-center text-justify text-sans">
-            <div className="w-[80vw] max-w-5xl px-4">
+            <div className="w-full w-[80vw] max-w-5xl px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
 
                 {/* LEFT – TEXT */}
@@ -237,17 +238,7 @@ const App: React.FC = () => {
     {/* Faq Section */}
         <section id="faq" className="bg-ivory px-6 md:px-12">
             <div className="max-w-4xl mx-auto text-center">
-                <div className="flex items-center justify-center w-full my-16">
-                    <div className="flex-1 border-t border-terracotta/40"></div>
-
-                    <img
-                        src="/assets/ficod.png"
-                        className="w-32 h-auto mx-6"
-                        alt="Icon"
-                    />
-
-                    <div className="flex-1 border-t border-terracotta/40"></div>
-                    </div>
+                <Divider />
                 <h2 className="font-titles font-extrabold text-4xl md:text-7xl text-orange mb-12 flex items-center justify-center gap-4">
                     {t.travelTitle}
                 </h2>
@@ -256,52 +247,25 @@ const App: React.FC = () => {
         </section>
 
 
-        {/* Photo Gallery Section */}
-        <section id="photos" className="px-6 md:px-12">
-          <div className="max-w-6xl mx-auto text-center">
-                <div className="flex items-center justify-center w-full my-16">
-                    <div className="flex-1 border-t border-terracotta/40"></div>
-
-                    <img
-                        src="/assets/ficod.png"
-                        className="w-32 h-auto mx-6"
-                        alt="Icon"
-                    />
-
-                    <div className="flex-1 border-t border-terracotta/40"></div>
-                    </div>
-            <h2 className="font-titles font-extrabold text-4xl md:text-7xl text-orange mb-12">{t.photosTitle}</h2>
-            <PhotoGallery />
-          </div>
-        </section>
-
         {/* RSVP Section */}
         <section id="rsvp" className="bg-ivory px-6 md:px-12">
             <div className="max-w-4xl mx-auto text-center">
-                <div className="flex items-center justify-center w-full my-16">
-                    <div className="flex-1 border-t border-terracotta/40"></div>
-
-                    <img
-                        src="/assets/ficod.png"
-                        className="w-32 h-auto mx-6"
-                        alt="Icon"
-                    />
-
-                    <div className="flex-1 border-t border-terracotta/40"></div>
-                    </div>
+                <Divider />
                 <h2 className="font-titles font-extrabold text-4xl md:text-7xl text-orange mb-4 pb-10">{t.rsvpTitle}</h2>
-                <div className="aspect-w-1 aspect-h-1 md:aspect-w-3 md:aspect-h-2">
-                   <iframe
-                      src={googleFormUrl}
-                      width="100%"
-                      height="900"
-                      title="RSVP Form"
-                      className="rounded-lg shadow-lg"
-                      >
-                      Loading…
-                    </iframe>
-                </div>
+                <p className="text-xs sm:text-base md:text-lg leading-snug sm:leading-relaxed text-green/80 mb-4 pb-12 md:pb-12">
+                    {t.rsvpPara}
+                </p>
+                <RSVPButton link={googleFormUrl} text={"RSVP"} />
             </div>
+        </section>
+
+        {/* Photo Gallery Section */}
+        <section id="photos" className="px-6 md:px-12 pb-20">
+          <div className="max-w-6xl mx-auto text-center">
+            <Divider />
+            <h2 className="font-titles font-extrabold text-4xl md:text-7xl text-orange mb-12">{t.photosTitle}</h2>
+            <PhotoGallery />
+          </div>
         </section>
       </main>
       
