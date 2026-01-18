@@ -51,7 +51,7 @@ const Faq: React.FC = () => {
                                         <br /><br />
                                         Gli <b>autobus di media e lunga percorrenza</b> sono una valida alternativa per muoversi tra città. I biglietti possono essere acquistati online su <u><a href='https://www.flixbus.com/'>Flixbus</a></u>, <u><a href='https://marinobus.it/'>Marino Bus</a></u>, o sul sito dell'azienda di trasporto locale <u><a href='https://biglietteria.cotrap.it/#/ricerca'>COTRAP</a></u>. 
                                         <br /><br />
-                                        Una volta arrivati a Castellana Grotte o Alberobello, la location e gli hotel della zona sono facilmente raggiungibili in taxi. Stiamo valutando l’organizzazione di un <b>transfer privato</b> nel giorno del matrimonio: vi chiediamo di <b>indicarci nel moduo RSVP sottostante</b> se desiderate usufruirne, così da poterlo pianificare al meglio.
+                                        Una volta arrivati a Castellana Grotte o Alberobello, la location e gli hotel della zona sono facilmente raggiungibili in taxi. Stiamo valutando l’organizzazione di un <b>transfer privato</b> nel giorno del matrimonio: vi chiediamo di <b>indicarci nel modulo RSVP sottostante</b> se desiderate usufruirne, così da poterlo pianificare al meglio.
                                         </>
                                     );
                             }
