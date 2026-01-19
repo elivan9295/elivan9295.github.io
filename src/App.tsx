@@ -182,25 +182,7 @@ const App: React.FC = () => {
                 {/* LEFT – TEXT */}
                 <div>
                 <p className="text-xs sm:text-base md:text-lg leading-snug sm:leading-relaxed text-green/80 mb-4">
-                    {(() => {
-                            switch(language) {
-                                case 'en':
-                                    return(
-                                       <span
-                                        className="font-script float-left mr-2 relative"
-                                        style={{
-                                            fontSize: '4rem',       // size of the drop cap
-                                            top: '-0.35em',           // move it upward
-                                            lineHeight: '1',         // keep spacing consistent
-                                            marginBottom: '-0.3em',  // vertical spacing below letter
-                                        }}
-                                        >
-                                        {t.giftsLetter}
-                                        </span>
-                                    );
-                                case 'it':
-                                    return(
-                                        <span
+                    <span
                                         className="font-script float-left mr-2 relative"
                                         style={{
                                             fontSize: '4rem',       // size of the drop cap
@@ -211,19 +193,8 @@ const App: React.FC = () => {
                                         >
                                         {t.giftsLetter}
                                         </span>
-                                    );
-                             }   
-                        })()}
                     
-                    {t.giftsPara0}
-                </p>
-
-                <p className="text-xs sm:text-base md:text-lg leading-snug sm:leading-relaxed text-green/80 md:mt-4">
-                    {t.giftsPara1} 
-                </p>
-
-                <p className="italic text-center text-xs sm:text-base md:text-lg leading-snug sm:leading-relaxed text-green/80 mt-12">
-                    {t.giftsPara2}
+                    {t.giftsPara1}
                 </p>
                 </div>
                 {/* RIGHT – DETAILS */}

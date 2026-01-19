@@ -249,7 +249,7 @@ const Faq: React.FC = () => {
                                 case 'it':
                                     return(
                                         <>
-                                        Durante la <b>cerimonia</b>, vi chiediamo gentilmente di partecipare a un momento <b>unplugged</b>, mettendo da parte <b>telefoni e fotocamere</b> per essere pienamente presenti e condividere con noi ogni emozione.
+                                        Durante la <b>cerimonia</b>, vi chiediamo gentilmente di partecipare al momento mettendo da parte <b>telefoni e fotocamere</b> per essere pienamente presenti e condividere con noi ogni emozione.
                                         <br /><br />
                                         Ci saranno <b>fotografi professionisti</b> a catturare ogni istante: dopo la cerimonia, sentitevi liberi di <b>scattare tutte le foto e i video che desiderate</b> e di condividere i ricordi della giornata con noi.
                                         </>
